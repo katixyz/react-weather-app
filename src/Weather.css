@@ -1,0 +1,47 @@
+.Weather {
+  margin-top: 30px;
+  padding: 10px;
+  border: 1px solid lightblue;
+  border-radius: 4px;
+  background-color: aliceblue;
+}
+
+.Weather form {
+  margin: 3px auto;
+}
+
+.Weather .today {
+  border-radius: 5px;
+  padding: 30px 12px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.Weather .icon {
+  font-size: 60px;
+  text-align: center;
+}
+
+.Weather .temperature {
+  font-size: 66px;
+  font-weight: 300;
+}
+
+.Weather .unit {
+  font-size: 32px;
+  font-weight: 300;
+  position: relative;
+  top: -22px;
+  margin-left: 5px;
+}
+
+.Weather .climate-values {
+  text-align: right;
+  list-style: none;
+  font-size: 20px;
+  padding: 15px;
+  margin: 0px;
+}
+
+.Weather li {
+  list-style: none;
+}
