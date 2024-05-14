@@ -5,9 +5,9 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather />
+        <Weather city="Rome" />
         <footer>
-          This project is coded by Kati Zech, open-source on GitHub and hosted
+          This project is coded by Kati Zech, open-sourced on GitHub and hosted
           on Netlify.
         </footer>
       </div>

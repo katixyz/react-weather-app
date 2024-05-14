@@ -1,13 +1,18 @@
 .Weather {
   margin-top: 30px;
   padding: 10px;
-  border: 1px solid lightblue;
+  border: 1px solid #add8e6;
   border-radius: 4px;
   background-color: aliceblue;
+  box-shadow: 5px 3px 19px rgba(173, 216, 230, 0.2);
 }
 
 .Weather form {
   margin: 3px auto;
+}
+
+.Weather .time {
+  text-align: right;
 }
 
 .Weather .today {
@@ -17,8 +22,7 @@
   margin-right: 0px;
 }
 .Weather .icon {
-  font-size: 60px;
-  text-align: center;
+  height: 100px;
 }
 
 .Weather .temperature {
