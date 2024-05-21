@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
 import "./Weather.css";
 
 export default function Weather(props) {
   let [weatherData, setWeatherData] = useState({ loaded: false });
-  const [city, setCity] = useState(props.city);
+  let [city, setCity] = useState(props.city);
 
   function handleResponse(response) {
     setWeatherData({
       loaded: true,
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
@@ -19,13 +22,17 @@ export default function Weather(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const apiKey = "ab8e7ef210556986d1c9a75d6007b825";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
   }
 
   function handleChange(event) {
     setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = "ab8e7ef210556986d1c9a75d6007b825";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   if (weatherData.loaded) {
@@ -46,7 +53,7 @@ export default function Weather(props) {
           />
         </form>
 
-        <p className="time">18:48, May 13 2024</p>
+        <FormattedDate date={weatherData.date} />
 
         <div className="current-city">
           <h1>{city}</h1>
@@ -57,10 +64,7 @@ export default function Weather(props) {
             <img src={weatherData.icon} alt="partly cloudy" className="icon" />
           </div>
           <div className="col-2">
-            <span className="temperature">
-              {Math.round(weatherData.temperature)}
-            </span>
-            <span className="unit"> °C</span>
+            <WeatherTemperature celsius={weatherData.temperature} />
           </div>
           <div className="col-6">
             <hr className="line" />
@@ -78,6 +82,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
+    search();
     return "Loading...";
   }
 }
