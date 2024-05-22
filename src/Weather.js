@@ -17,6 +17,7 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      city: response.data.name,
     });
   }
 
@@ -26,6 +27,7 @@ export default function Weather(props) {
   }
 
   function handleChange(event) {
+    event.preventDefault();
     setCity(event.target.value);
   }
 
@@ -56,7 +58,7 @@ export default function Weather(props) {
         <FormattedDate date={weatherData.date} />
 
         <div className="current-city">
-          <h1>{city}</h1>
+          <h1>{weatherData.city}</h1>
         </div>
 
         <div className="row today">
