@@ -17,7 +17,7 @@
 
 .Weather .today {
   border-radius: 5px;
-  padding: 30px 12px;
+  padding: 30px 6px;
   margin-left: 0px;
   margin-right: 0px;
 }
@@ -25,9 +25,14 @@
   height: 100px;
 }
 
+.Weather .displayTemperature {
+  text-align: left;
+}
+
 .Weather .temperature {
   font-size: 66px;
   font-weight: 300;
+  text-align: left;
 }
 
 .Weather .unit {

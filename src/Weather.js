@@ -64,16 +64,13 @@ export default function Weather(props) {
         </div>
 
         <div className="row today">
-          <div className="col-1">
+          <div className="col-2">
             <img src={weatherData.icon} alt="partly cloudy" className="icon" />
           </div>
-          <div className="col-2">
+          <div className="col-3 displayTemperature">
             <WeatherTemperature celsius={weatherData.temperature} />
           </div>
-          <div className="col-6">
-            <hr className="line" />
-          </div>
-          <div className="col-3">
+          <div className="col-7">
             <ul className="climate-values">
               <li className="description text-capitalize">
                 {weatherData.description}
