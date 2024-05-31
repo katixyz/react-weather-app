@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -13,6 +14,7 @@ export default function Weather(props) {
       loaded: true,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
+      coords: response.data.coord,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
@@ -81,6 +83,7 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
+        <WeatherForecast data={weatherData} />
       </div>
     );
   } else {

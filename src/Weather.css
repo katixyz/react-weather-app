@@ -3,7 +3,7 @@
   padding: 10px;
   border: 1px solid #add8e6;
   border-radius: 4px;
-  background-color: aliceblue;
+  background-color: #7cb5fc;
   box-shadow: 5px 3px 19px rgba(173, 216, 230, 0.2);
 }
 
@@ -36,6 +36,12 @@
   position: relative;
   top: -22px;
   margin-left: 5px;
+}
+
+.Weather a {
+  color: #000;
+  opacity: 0.6;
+  text-decoration: none;
 }
 
 .Weather .climate-values {
